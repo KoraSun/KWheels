@@ -10,13 +10,16 @@
         <div class="banner">
             <h1>壳 UI</h1>
             <h2>一个厉害的 UI 框架</h2> 
-            <p class="action">
+            <p class="actions">
                 <a href="">Github</a>
                 <a href="">开始</a>
             </p>
         </div>
     </div>
 </template>
+<script lang="ts">
+
+</script>
 
 <style lang="scss" scoped>
   .topnav{
@@ -36,7 +39,24 @@
           }
       }
   }
-  
-
-
+  .banner{
+      padding:100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgb(203, 238, 248);
+       > .actions{
+          padding: 8px 0;
+          a {
+              margin: 0 8px;
+              background: rgb(119, 183, 243);
+              display: inline-block;
+              $h:28px;
+              height: $h;
+              border-radius: $h/2;
+              padding: 2px 8px;
+          }      
+      }
+  }
 </style>
