@@ -39,6 +39,8 @@
       background:rgba(119, 183, 243);
       display: flex;
       padding: 16px;
+      position: relative;
+      z-index: 10;
       > .logo{
           max-width: 6em;
           margin-right: auto;
@@ -54,16 +56,18 @@
   }
   aside{
       background:rgb(203, 238, 248);
-      width: 150px;
+      width: 140px;
       padding: 16px;
       position: fixed;
       top: 0;
       left: 0;
+      padding-top: 70px;
       > h2{
           margin-bottom: 4px;
       }
       > ol{
           > li{
+              margin:5px;
               padding-inline: 4px 0;
           }
       }
