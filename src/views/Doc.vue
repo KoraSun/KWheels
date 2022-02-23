@@ -1,14 +1,8 @@
 <template>
     <div>
-       <div class="topnav">
-            <div class="logo">LOGO</div>
-            <ul class="menu">
-                <li>菜单1</li>
-                <li>菜单2</li>
-            </ul>
-        </div>
+       <Topnav/>
         <div class="content">
-            <aside>
+            <aside >
                 <h2>组件列表</h2>
                 <ol>
                     <li>
@@ -31,29 +25,21 @@
 </template>
 
 <script lang="ts">
+import Topnav from '../components/Topnav.vue'
+import { inject ,Ref} from 'vue'
+  export default{
+      components:{Topnav},
+      setup(){
+          const menuVisible = inject<Ref<boolean>>
+          ('menuVisible') // get
+          return {menuVisible} 
+      }
+  }
 
 </script>
 
 <style lang="scss" scoped>
-  .topnav{
-      background:rgba(119, 183, 243);
-      display: flex;
-      padding: 16px;
-      position: relative;
-      z-index: 10;
-      > .logo{
-          max-width: 6em;
-          margin-right: auto;
-      }
-      > .menu{
-          display: flex;
-          white-space: nowrap;
-          flex-wrap: nowrap;
-          > li{
-              margin:0 1em;
-          }
-      }
-  }
+  
   aside{
       background:rgb(203, 238, 248);
       width: 140px;
