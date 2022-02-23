@@ -11,8 +11,8 @@
             <h1>壳 UI</h1>
             <h2>一个厉害的 UI 框架</h2> 
             <p class="actions">
-                <a href="">Github</a>
-                <a href="">开始</a>
+                <a href="https://github.com">Github</a>
+                <router-link to='/doc'>Start</router-link>
             </p>
         </div>
     </div>
@@ -55,7 +55,7 @@
               $h:28px;
               height: $h;
               border-radius: $h/2;
-              padding: 2px 8px;
+              padding: 3px 8px;
           }      
       }
   }

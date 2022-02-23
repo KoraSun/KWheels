@@ -11,7 +11,13 @@ const router =createRouter({
     history:history,
     routes:[
         {path:'/',component:Home},
-        {path:'/doc',component:Doc}
+        {path:'/doc',component:Doc},
+        {path:'/doc/switch',component:Doc},
+        {path:'/doc/button',component:Doc},
+        {path:'/doc/dialog',component:Doc},
+        {path:'/doc/tabs',component:Doc},
+
+
     ]
 })
 
