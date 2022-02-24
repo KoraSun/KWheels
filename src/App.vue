@@ -12,6 +12,7 @@ export default {
   setup(){
     const menuVisible = ref(false)
     provide('menuVisible', menuVisible) // set
+    console.log(menuVisible.value)
   }
 }
 </script>
