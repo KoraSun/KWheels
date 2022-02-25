@@ -29,16 +29,16 @@
                     </li>
                 </ol>
             </aside>
-            <main>主内容</main>
+            <main>
+                <router-view/>
+            </main>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import Topnav from '../components/Topnav.vue'
 import { inject ,Ref} from 'vue'
   export default{
-      components:{Topnav},
       setup(){
           const menuVisible = inject<Ref<boolean>>("menuVisible");
           console.log('get'+ menuVisible.value)
