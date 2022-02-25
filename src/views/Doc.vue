@@ -1,16 +1,18 @@
 <template>
-    <div>
-       <div class="topnav">
-            <span class="toggleAside" 
-            @click="toggleMenu">
-            </span>
-            <div class="logo" >LOGO</div>
-            <ul class="menu">
-                <li>菜单1</li>
-                <li>菜单2</li>
-            </ul>
-            
+    <div class="layout">
+        <div class="nav">
+            <div class="topnav">
+                <span class="toggleAside" 
+                @click="toggleMenu">
+                </span>
+                <div class="logo" >LOGO</div>
+                <ul class="menu">
+                    <li>菜单1</li>
+                    <li>菜单2</li>
+                </ul>    
+            </div>
         </div>
+
         <div class="content">
             <aside v-if="menuVisible" >
                 <h2>组件列表</h2>
@@ -53,14 +55,35 @@ import { inject ,Ref} from 'vue'
 </script>
 
 <style lang="scss" scoped>
+ .layout{
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     > .nav{
+         flex-shrink: 0;
+     }
+     > .content{
+         flex-grow: flex;
+         padding-top: 58px;
+         padding-left: 156px;
+         @media(max-width: 500px){
+             padding-left: 0;
+         }
+     }
+
+ }
  .topnav{
       background:rgba(119, 183, 243);
       display: flex;
       padding: 16px;
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 10;
-      justify-content: center;
+      justify-content: fixed;
       align-items: center;
+      box-shadow: 0 5px 5px rgba(#333,0.1);
       > .logo{
           max-width: 6em;
           margin-right: auto;
@@ -91,24 +114,40 @@ import { inject ,Ref} from 'vue'
 
       }
   }
-  
+  .content{
+      display: flex;
+      > aside{
+          flex-shrink: 0;
+      }
+      > main{
+          height: 100vh;
+          flex-grow: 1;
+          padding:16px;
+          background: #fff;
+          overflow: auto;
+      }
+  }
   aside{
       background:rgb(203, 238, 248);
-      width: 140px;
+      width: 150px;
       padding: 16px;
       position: fixed;
       top: 0;
       left: 0;
       padding-top: 70px;
+      height: 100%;
+      box-shadow: 5px 0 5px rgba(#333,0.1);
       > h2{
           margin-bottom: 4px;
       }
       > ol{
           > li{
-              margin:5px;
-              padding-inline: 4px 0;
+              padding: 4px 0;
           }
       }
+  }
+  main{
+      overflow: auto;
   }
 </style>
 
