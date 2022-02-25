@@ -2,25 +2,26 @@
     <button 
        class="k-switch"
        @click="toggle"
-       :class="{'checked':checked}"
+       :class="{'checked':value}"
     >
-    <span></span>
+    <span>
+       
+    </span>
     </button>
 </template>
 
 <script lang="ts">
     export default {
-        data(){
-            return{
-                checked:true
-            }
-        },
-        methods:{
-            toggle(){
-                this.checked=!this.checked
-            }
-        }
+        props:{
+            value:Boolean
 
+        },
+        setup(props,context){
+           const toggle=()=>{
+               context.emit('input',!props.value)
+            }
+            return {toggle}
+        }
         
     }
 </script>
@@ -43,6 +44,7 @@ $h2:18px;
         width: $h2;
         background: white;
         border-radius: $h2/2;
+        transition: left 250ms;
     }
 }
 

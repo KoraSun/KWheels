@@ -1,13 +1,19 @@
 <template>
     <div>
-      <Switch />
+      <Switch :value="access" 
+              @input="access=$event"/>
     </div>
 </template>
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue'
+import {ref} from 'vue'
     export default {
-        components:{Switch}
+        components:{Switch},
+        setup(){
+           const access= ref(false)
+           return {access}
+        }
      
     }
 </script>
