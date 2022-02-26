@@ -1,6 +1,6 @@
 <template>
     <button class="k-button"
-      :class="`theme-${theme}`"
+      :class="`k-theme-${theme}:theme`"
     >
         <slot />
     </button>
@@ -18,7 +18,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $h:32px;
 $border-color:#d9d9d9;
 $color:#333;
@@ -41,14 +41,16 @@ $radius:4px;
     & + & {
         margin-left: 8px;
     }
-    &:hover{
-
-    }
+    
     &:focus{
         color:$blue;
         border-color: $blue;
-        outline: none;
+       
     }
+    &:focus{
+         outline: none;
+    }
+        
     &::-moz-focus-inner{
         border:0;
     }

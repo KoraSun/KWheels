@@ -2,7 +2,7 @@
     <button 
        class="k-switch"
        @click="toggle"
-       :class="{'checked':value}"
+       :class="{'k-checked':value}"
     >
     <span>
        
@@ -26,7 +26,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $h:22px;
 $h2:18px;
 .k-switch{
@@ -46,7 +46,7 @@ $h2:18px;
         border-radius: $h2/2;
         transition: left 250ms;
     }
-    &.checked{
+    &.k-checked{
         background:rgba(119, 183, 243);
         > span{
             left:calc(100% - #{$h2} - 2px);
