@@ -18,13 +18,18 @@ import { computed } from '@vue/runtime-core'
                 type:String,
                 default:"normal"
             },
+            level:{
+                type:String,
+                default:"main"
+            },
         },
         setup(props){
-            const {theme,size} =props
+            const {theme,size,level} =props
             const classes=computed(()=>{
                 return {
                     [`k-theme-${theme}`]:theme,
-                    [`k-size-${size}`]:size
+                    [`k-size-${size}`]:size,
+                    [`k-level-${level}`]:level,
                 };
             })
             return {classes}
@@ -52,7 +57,20 @@ $radius:4px;
     color:$color;
     border:1px solid $border-color;
     border-radius: $radius;
-    box-shadow: 0 1px 0 fade-out($color: #000000, $amount: 0.95);
+    box-shadow: 0 1px 0 fade-out(black,0.95);
+    &:hover{
+             animation: button-hover 0.5s linear forwards;
+            
+    }
+    @keyframes button-hover {
+        from {
+        transform: translateY(0);
+        }
+        to {
+        transform: translateY(-3px);
+        }
+    }
+    
     & + & {
         margin-left: 8px;
     }
@@ -97,10 +115,22 @@ $radius:4px;
             height: 20px;
             padding: 0 4px;
         }
-
     }
-
-
+    &.k-level-primary{
+            background:#1976d2;
+            color:#fff;
+            border:none;
+        }
+    &.k-level-warning{
+            background:#ffc107;
+            color:#fff;
+            border:none;
+        }
+    &.k-level-danger{
+            background:#ff4f57;
+            color:#fff;
+            border:none;
+        }    
 
 }
 

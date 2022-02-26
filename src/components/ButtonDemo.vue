@@ -13,6 +13,12 @@
           <Button size="normal">正正正</Button>
           <Button size="small">小小小</Button>
       </div>
+      <h1>示例三</h1>
+      <div>
+           <Button level="primary">基础按钮</Button>
+          <Button level="danger">危险按钮</Button>
+          <Button level="warning">警告按钮</Button>
+      </div>
      
     </div>
 </template>
