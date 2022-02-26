@@ -1,6 +1,6 @@
 <template>
     <button class="k-button"
-      :class="`k-theme-${theme}:theme`"
+      :class="`k-theme-${theme}`"
     >
         <slot />
     </button>
@@ -53,6 +53,25 @@ $radius:4px;
         
     &::-moz-focus-inner{
         border:0;
+    }
+    &.k-theme-link{
+        border-color: transparent;
+        box-shadow: none;
+        color: $blue;
+        &:hover,&:focus{
+            color: lighten($blue,10%);
+        }
+    }
+
+    &.k-theme-text{
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+        &:hover,&:focus{
+            background: darken(white,5%);
+        }
+
+
     }
 
 
