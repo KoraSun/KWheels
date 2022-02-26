@@ -46,14 +46,15 @@ $h2:18px;
         border-radius: $h2/2;
         transition: left 250ms;
     }
-}
-
-.checked{
+    &.checked{
         background:rgba(119, 183, 243);
         > span{
             left:calc(100% - #{$h2} - 2px);
         }
       }
+}
+
+
     
 
 
