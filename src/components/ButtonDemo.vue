@@ -19,6 +19,9 @@
           <Button level="danger">危险按钮</Button>
           <Button level="warning">警告按钮</Button>
       </div>
+       <h1>示例四</h1>
+       <Button disabled>禁用按钮</Button>
+       <Button :disabled="true">禁用2</Button>
      
     </div>
 </template>

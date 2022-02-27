@@ -1,6 +1,7 @@
 <template>
     <button class="k-button"
       :class="classes"
+      :disabled="disabled"
     >
         <slot />
     </button>
@@ -22,6 +23,12 @@ import { computed } from '@vue/runtime-core'
                 type:String,
                 default:"main"
             },
+            disabled:{
+                type:Boolean,
+                default:false
+
+            }
+                
         },
         setup(props){
             const {theme,size,level} =props
@@ -59,7 +66,10 @@ $radius:4px;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black,0.95);
     &:hover{
-             animation: button-hover 0.5s linear forwards;
+         animation: button-hover 0.5s linear forwards;
+         &[disabled]{
+             animation: none;
+         }
             
     }
     @keyframes button-hover {
@@ -104,17 +114,15 @@ $radius:4px;
             background: darken(white,5%);
         }
     }
-    &.k-theme-button{
-        &.k-size-big{
+    &.k-size-big{
             font-size: 24px;
             height: 48px;
             padding: 0 16px;
         }
-        &.k-size-small{
-            font-size: 12px;
-            height: 20px;
-            padding: 0 4px;
-        }
+    &.k-size-small{
+        font-size: 12px;
+        height: 20px;
+        padding: 0 4px;
     }
     &.k-level-primary{
             background:#1976d2;
@@ -130,7 +138,13 @@ $radius:4px;
             background:#ff4f57;
             color:#fff;
             border:none;
-        }    
+        }   
+    &[disabled]{
+        cursor: not-allowed;
+        color: #fff;
+        background: #ddd;
+        border: none;
+    } 
 
 }
 
