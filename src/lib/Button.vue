@@ -1,8 +1,9 @@
 <template>
     <button class="k-button"
       :class="classes"
-      :disabled="disabled"
+      :disabled="loading? true : disabled" 
     >
+    <span v-if="loading" class="k-loadingIndicator"></span>
         <slot />
     </button>
 </template>
@@ -24,6 +25,11 @@ import { computed } from '@vue/runtime-core'
                 default:"main"
             },
             disabled:{
+                type:Boolean,
+                default:false
+
+            },
+            loading:{
                 type:Boolean,
                 default:false
 
@@ -66,19 +72,10 @@ $radius:4px;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black,0.95);
     &:hover{
-         animation: button-hover 0.5s linear forwards;
+         animation: k-button-hover 0.5s linear forwards;
          &[disabled]{
              animation: none;
          }
-            
-    }
-    @keyframes button-hover {
-        from {
-        transform: translateY(0);
-        }
-        to {
-        transform: translateY(-3px);
-        }
     }
     
     & + & {
@@ -145,7 +142,30 @@ $radius:4px;
         background: #ddd;
         border: none;
     } 
-
+    > .k-loadingIndicator{
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-right: 4px;
+        border-radius: 8px;
+        border-color: lighten($blue,20%) lighten($blue,10%) $blue transparent;
+        border-style: solid;
+        border-width: 2px;
+        animation: k-spin 1s infinite linear;
+    }
 }
+@keyframes k-spin{
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+}
+
+@keyframes k-button-hover {
+        from {
+        transform: translateY(0);
+        }
+        to {
+        transform: translateY(-3px);
+        }
+    }
 
 </style>

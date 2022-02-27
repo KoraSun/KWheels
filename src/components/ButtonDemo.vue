@@ -22,6 +22,9 @@
        <h1>示例四</h1>
        <Button disabled>禁用按钮</Button>
        <Button :disabled="true">禁用2</Button>
+       <h1>示例五</h1>
+       <Button :loading="true">loading</Button>
+       <Button>加载完毕</Button>
      
     </div>
 </template>
