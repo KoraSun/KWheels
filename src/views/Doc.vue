@@ -43,7 +43,6 @@ import { inject ,Ref} from 'vue'
   export default{
       setup(){
           const menuVisible = inject<Ref<boolean>>("menuVisible");
-          console.log('get'+ menuVisible.value)
           const toggleMenu =()=>{
               menuVisible.value =!menuVisible.value
               console.log('click'+menuVisible.value)

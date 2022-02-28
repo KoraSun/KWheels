@@ -1,7 +1,7 @@
 <template>
     <div>
       Button组件
-      <h1>示例一</h1>
+      <h2>示例一</h2>
       <div>
            <Button theme="button">默认主题 </Button>
           <Button theme="link">链接按钮</Button>

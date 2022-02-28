@@ -29,11 +29,12 @@ import { computed } from '@vue/runtime-core'
                 default:false
 
             },
-            loading:{
+             loading:{
                 type:Boolean,
                 default:false
 
             }
+           
                 
         },
         setup(props){
