@@ -5,11 +5,11 @@
                 <div class="k-dialog-wrapper">
                     <div class="k-dialog">
                         <header>
-                            {{title}}
+                            <slot name='title' />
                             <span @click="close" class="k-dialog-close"></span>
                         </header>
                         <main>
-                            <slot />
+                            <slot name='content'/>
                         </main>
                         <footer>
                             <Button level='main' @click="ok">Confirm</Button>
@@ -25,10 +25,6 @@
 import Button from './Button.vue'
 export default{
     props:{
-        title:{
-            type:String,
-            default:'自定义标题'
-        },
         visible:{
             type:Boolean,
             default:false
@@ -55,8 +51,9 @@ export default{
             }
         }   
         const cancel=()=>{
-            context.emit('cancel')
-            close()
+             if(props.cancel?.()!== false){
+                close()
+            }
 
         }
         const ok=()=>{
