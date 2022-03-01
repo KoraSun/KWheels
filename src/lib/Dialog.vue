@@ -1,21 +1,23 @@
 <template>
    <template v-if="visible">
-        <div class="k-dialog-overlay" @click="OnClickOverlay"></div>
-        <div class="k-dialog-wrapper">
-            <div class="k-dialog">
-                <header>标题
-                    <span @click="close" class="k-dialog-close"></span>
-                </header>
-                <main>
-                    <p>第一行字</p>
-                    <p>第二行字</p>
-                </main>
-                <footer>
-                    <Button level='main' @click="ok">Confirm</Button>
-                    <Button @click="cancel">Cancel</Button>
-                </footer>
-            </div>
-        </div>
+       <Teleport to="body">
+            <div class="k-dialog-overlay" @click="OnClickOverlay"></div>
+                <div class="k-dialog-wrapper">
+                    <div class="k-dialog">
+                        <header>
+                            {{title}}
+                            <span @click="close" class="k-dialog-close"></span>
+                        </header>
+                        <main>
+                            <slot />
+                        </main>
+                        <footer>
+                            <Button level='main' @click="ok">Confirm</Button>
+                            <Button @click="cancel">Cancel</Button>
+                        </footer>
+                    </div>
+                </div>
+       </Teleport>  
     </template>
 </template>
 
@@ -23,6 +25,10 @@
 import Button from './Button.vue'
 export default{
     props:{
+        title:{
+            type:String,
+            default:'自定义标题'
+        },
         visible:{
             type:Boolean,
             default:false

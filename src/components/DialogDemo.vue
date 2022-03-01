@@ -5,6 +5,8 @@
     <Dialog v-model:visible="showDialog" 
             :closeOnClickOverlay="false"
             :ok="f1" :cancel="f2" >
+            <div>hi</div>
+            <div>自定义内容</div>     
     </Dialog>
 </template>
 
