@@ -1,14 +1,12 @@
 <template>
     <div>
-        tabs组件
-
+       Tab组件
     </div>
 </template>
 
 <script>
     export default {
         
-    
     }
 </script>
 
