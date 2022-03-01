@@ -1,31 +1,72 @@
 <template>
-    <div class="k-dialog-overlay"></div>
-    <div class="k-dialog-wrapper">
-      <div class="k-dialog">
-        <header>标题
-            <span class="k-dialog-close"></span>
-        </header>
-        <main>
-            <p>第一行字</p>
-            <p>第二行字</p>
-        </main>
-        <footer>
-            <Button level='main'>Confirm</Button>
-            <Button>Cancel</Button>
-        </footer>
-      </div>
-    </div>
+   <template v-if="visible">
+        <div class="k-dialog-overlay" @click="OnClickOverlay"></div>
+        <div class="k-dialog-wrapper">
+            <div class="k-dialog">
+                <header>标题
+                    <span @click="close" class="k-dialog-close"></span>
+                </header>
+                <main>
+                    <p>第一行字</p>
+                    <p>第二行字</p>
+                </main>
+                <footer>
+                    <Button level='main' @click="ok">Confirm</Button>
+                    <Button @click="cancel">Cancel</Button>
+                </footer>
+            </div>
+        </div>
+    </template>
 </template>
 
 <script lang = "ts">
 import Button from './Button.vue'
 export default{
-    components:{Button}
+    props:{
+        visible:{
+            type:Boolean,
+            default:false
+        },
+        closeOnClickOverlay:{
+            type:Boolean,
+            default:true
+        },
+        ok:{
+            type:Function
+        },
+        cancel:{
+            type:Function
+        }
+    },
+    components:{Button},
+    setup(props,context){
+        const close=()=>{
+            context.emit('update:visible',false)
+        }
+        const OnClickOverlay=()=>{
+            if(props.closeOnClickOverlay){
+                close()
+            }
+        }   
+        const cancel=()=>{
+            context.emit('cancel')
+            close()
+
+        }
+        const ok=()=>{
+            if(props.ok?.()!== false){
+                close()
+            }
+            
+
+        }
+        return {close,OnClickOverlay,cancel,ok}
+    }
 }
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $radius:4px;
 $border-color:#d9d9d9;
 
