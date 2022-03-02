@@ -48,9 +48,10 @@ import Topnav from '../components/Topnav.vue'
 $blue:rgb(119, 183, 243);
 $border-radius:20px;
 $color:#0661a8;
-  .topnavAndBanner{
-      background: linear-gradient(145deg, rgba(203,238,248,1) 0%, rgba(118,183,241,1) 100%);
-  }
+    .topnavAndBanner{
+        background: linear-gradient(145deg, rgba(203,238,248,1) 0%, rgba(118,183,241,1) 100%);
+        clip-path: ellipse(80% 60% at 50% 40%);
+    }
 
   .features{
       >svg{
@@ -80,7 +81,7 @@ $color:#0661a8;
           flex-wrap: nowrap;
           > li{
               margin:0 1em;
-              margin-top: 4px;
+              margin-top: 10px;
           }
       }
   }
