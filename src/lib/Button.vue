@@ -73,7 +73,7 @@ $radius:4px;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black,0.95);
     &:hover{
-         animation: k-button-hover 0.5s linear forwards;
+         animation: k-button-hover 250ms linear forwards;
          &[disabled]{
              animation: none;
          }
@@ -125,17 +125,17 @@ $radius:4px;
     &.k-level-primary{
             background:#1976d2;
             color:#fff;
-            border:none;
+            border-color:transparent;
         }
     &.k-level-warning{
             background:#ffc107;
             color:#fff;
-            border:none;
+            border-color:transparent;
         }
     &.k-level-danger{
             background:#ff4f57;
             color:#fff;
-            border:none;
+            border-color:transparent;
         }   
     &[disabled]{
         cursor: not-allowed;
@@ -165,8 +165,9 @@ $radius:4px;
         transform: translateY(0);
         }
         to {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         }
+
     }
 
 </style>

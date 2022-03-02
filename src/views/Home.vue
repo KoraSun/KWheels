@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topnavAndBanner">
         <div class="topnav">
             <div class="logo">LOGO</div>
             <ul class="menu">
@@ -27,8 +27,11 @@ import Topnav from '../components/Topnav.vue'
 </script>
 
 <style lang="scss" scoped>
+  .topnavAndBanner{
+      background: linear-gradient(145deg, rgba(203,238,248,1) 0%, rgba(118,183,241,1) 100%);
+  }
+
   .topnav{
-      background:rgba(119, 183, 243);
       display: flex;
       padding: 16px;
       position: relative;
@@ -52,7 +55,6 @@ import Topnav from '../components/Topnav.vue'
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background: rgb(203, 238, 248);
        > .actions{
           padding: 8px 0;
           a {
