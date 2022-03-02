@@ -19,7 +19,7 @@
 </template>
  
 <script lang="ts">
-import { onMounted, onUpdated, ref, watchEffect } from 'vue'
+import { onMounted,  ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
     export default {
         props:{
@@ -50,16 +50,14 @@ import Tab from './Tab.vue'
                    throw new Error('Tabs子标签必须是Tab')
                }
            })
-           const current = defaults.filter((tag)=>{
-               return tag.props.title === props.selected
-           })[0]
+           
            const titles =defaults.map((tag)=>{
                return tag.props.title
            })
            const select=(title:string)=>{
                context.emit('update:selected',title)
            }
-           return {defaults,titles,current,select,selectedItem,indicator,container}
+           return {defaults,titles,select,selectedItem,indicator,container}
         }
         
     }
