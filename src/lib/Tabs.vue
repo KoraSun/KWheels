@@ -19,7 +19,7 @@
 </template>
  
 <script lang="ts">
-import { onMounted, onUpdated, ref } from 'vue'
+import { onMounted, onUpdated, ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
     export default {
         props:{
@@ -31,7 +31,8 @@ import Tab from './Tab.vue'
            const selectedItem =ref<HTMLDivElement>(null)
            const indicator = ref<HTMLDivElement>(null)
            const container =ref<HTMLDivElement>(null)
-           const x=()=>{
+           onMounted(()=>{
+            watchEffect(()=>{
                const {width}=selectedItem.value.getBoundingClientRect()
                indicator.value.style.width=width+'px'
 
@@ -39,9 +40,10 @@ import Tab from './Tab.vue'
                const {left:SelectedLeft} =selectedItem.value.getBoundingClientRect()
                const left =SelectedLeft-NavLeft
                indicator.value.style.left=left+'px'
-           }
-           onMounted(x)
-           onUpdated(x)
+
+            })
+           })
+          
            const defaults=context.slots.default()
            defaults.forEach((tag)=>{
                if(tag.type!==Tab){
