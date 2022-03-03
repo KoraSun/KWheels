@@ -3,6 +3,7 @@
        class="k-switch"
        @click="toggle"
        :class="{'k-checked':value}"
+       :disabled="loading? true :disabled"
     >
     <span>
        
@@ -13,7 +14,16 @@
 <script lang="ts">
     export default {
         props:{
-            value:Boolean
+            value:Boolean,
+            disabled:{
+                type:Boolean,
+                default:false
+            },
+            loading:{
+                type:Boolean,
+                default:false,
+
+            }
 
         },
         setup(props,context){
@@ -36,6 +46,10 @@ $h2:18px;
     background: grey;
     border-radius: $h/2;
     position: relative;
+    cursor: pointer;
+    &[disabled]{
+            pointer-events: not-allowed;
+        }
     > span{
         position: absolute;
         top: 2px;
