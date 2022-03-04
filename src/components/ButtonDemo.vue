@@ -15,9 +15,9 @@
       </div>
       <h1>示例三</h1>
       <div>
-           <Button level="primary">基础按钮</Button>
-          <Button level="danger">危险按钮</Button>
-          <Button level="warning">警告按钮</Button>
+           <Button level="primary" theme="level">基础按钮</Button>
+          <Button level="danger" theme="level">危险按钮</Button>
+          <Button level="warning" theme="level">警告按钮</Button>
       </div>
        <h1>示例四</h1>
        <Button disabled>禁用按钮</Button>

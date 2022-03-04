@@ -73,12 +73,11 @@ $radius:4px;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black,0.95);
     &:hover{
-         animation: k-button-hover 250ms linear forwards;
+         color:$blue;
          &[disabled]{
              animation: none;
          }
-    }
-    
+    }  
     & + & {
         margin-left: 8px;
     }
@@ -94,6 +93,15 @@ $radius:4px;
         
     &::-moz-focus-inner{
         border:0;
+    }
+    &.k-theme-level{
+        &:hover{
+         animation: k-button-hover 250ms linear forwards;
+         &[disabled]{
+             animation: none;
+         }
+        }
+
     }
     &.k-theme-link{
         border-color: transparent;
