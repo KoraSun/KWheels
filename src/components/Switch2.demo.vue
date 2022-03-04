@@ -14,9 +14,5 @@ export default{
         const bool= ref(false)
         return {bool}
     }
-
 }
-   
-     
-
 </script>
