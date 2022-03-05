@@ -18,7 +18,7 @@ export const router =createRouter({
         {path:'/',component:Home},
         {path:'/doc',component:Doc,
         children:[
-            {path:'',component:DocDemo},
+            {path:'',redirect:'/doc/intro'},
             {path:'intro',component:md('../markdown/intro.md')},
             {path:'get-started',component:md('../markdown/get-started.md')},
             {path:'install',component:md('../markdown/install.md')},

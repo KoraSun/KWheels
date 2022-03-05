@@ -69,16 +69,25 @@ $color:#0661a8;
     }
 
     .features{
-      margin:0px auto;
-      width: 400px;
+      margin:64px auto;
       padding: 0 16px;
 
       @media(min-width: 800px){
           width: 800px;
+          >ul{
+              >li{
+                  width: 50%;
+              }
+          }
       }
 
       @media(min-width: 1200px){
           width: 1200px;
+          >ol{
+              >li{
+                  width: 33.3333333%;
+              }
+          }
           
       }
       >ul{
