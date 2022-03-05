@@ -61,7 +61,7 @@ $radius:4px;
 .k-button{
     box-sizing: border-box;
     height: $h;
-    padding: 0 12px;
+    padding: 2px 12px;
     cursor: pointer;
     display: inline-block;
     justify-content: center;
@@ -72,6 +72,8 @@ $radius:4px;
     border:1px solid $border-color;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black,0.95);
+    margin-bottom: 3px;
+    margin-left: 8px;
     &:hover{
          color:$blue;
          &[disabled]{
@@ -79,7 +81,7 @@ $radius:4px;
          }
     }  
     & + & {
-        margin-left: 8px;
+       
     }
     
     &:focus{
