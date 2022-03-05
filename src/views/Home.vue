@@ -15,7 +15,7 @@
             </div>
             <div class="banner">
                 <h1>壳 UI</h1>
-                <h2>一个厉害的 UI 框架</h2> 
+                <h2>一个基于Vue3.0 的 UI 框架</h2> 
                 <p class="actions">
                     <a href="https://github.com">Github</a>
                     <router-link to='/doc'>Start</router-link>
