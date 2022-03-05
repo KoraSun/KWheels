@@ -71,30 +71,27 @@ $color:#0661a8;
     .features{
       margin:64px auto;
       padding: 0 16px;
-
-      @media(min-width: 800px){
-          width: 800px;
-          >ul{
-              >li{
-                  width: 50%;
-              }
-          }
-      }
-
-      @media(min-width: 1200px){
-          width: 1200px;
-          >ol{
-              >li{
-                  width: 33.3333333%;
-              }
-          }
-          
-      }
+        @media (min-width: 800px) {
+            width: 800px;
+            > ul {
+                > li {
+                    width: 50%;
+                }
+            }
+        }
+        @media (min-width: 1200px) {
+            width: 1200px;
+            > ul {
+                > li {
+                    width: 33.3333%;
+                }
+            }
+        }
       >ul{
           display: flex;
           flex-wrap: wrap;
           >li{
-              width: 400px;
+              padding-left: 16px;
               margin: 16px 0;
               display: grid;
               justify-content: start;

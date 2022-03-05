@@ -1,7 +1,6 @@
 <template>
     <article class="markdown-body" 
-    v-html="content">
-       
+    v-html="content">     
     </article>
 </template>
 
