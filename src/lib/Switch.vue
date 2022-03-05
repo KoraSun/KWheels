@@ -3,7 +3,7 @@
        class="k-switch"
        @click="toggle"
        :class="{'k-checked':value}"
-       :disabled="loading? true :disabled"
+       :disabled="disabled"
     >
     <span>
        
@@ -19,12 +19,6 @@
                 type:Boolean,
                 default:false
             },
-            loading:{
-                type:Boolean,
-                default:false,
-
-            }
-
         },
         setup(props,context){
            const toggle=()=>{
@@ -41,10 +35,10 @@ $h:22px;
 $h2:18px;
 .k-switch{
     height:22px;
-    width: $h*2;
+    width: 44px;
     border:none;
     background: grey;
-    border-radius: $h/2;
+    border-radius: 11px;
     position: relative;
     cursor: pointer;
     &[disabled]{
@@ -57,7 +51,7 @@ $h2:18px;
         height: $h2;
         width: $h2;
         background: white;
-        border-radius: $h2/2;
+        border-radius: 11px;
         transition: left 250ms;
     }
     &.k-checked{

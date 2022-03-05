@@ -3,7 +3,7 @@
         <div class="k-tabs-nav" ref="container">
             <div class="k-tabs-nav-item" 
                  @click="select(t)"
-                 :class="[t===selected?'selected':'']+[disabled===''?'disabled':'']"
+                :class="{selected: t=== selected}"
                  v-for="(t,index) in titles" 
                  :ref="el=>{if(t===selected) selectedItem=el }"
                  :key="index"
@@ -25,10 +25,6 @@ import Tab from './Tab.vue'
             selected:{
                 type:String
             },
-            disabled:{
-                type:String,
-                default:''
-            }  
         },
         setup(props,context){
            const selectedItem =ref<HTMLDivElement>(null)
@@ -43,7 +39,8 @@ import Tab from './Tab.vue'
                const {left:SelectedLeft} =selectedItem.value.getBoundingClientRect()
                const left =SelectedLeft-NavLeft
                indicator.value.style.left=left+'px'
-
+            },{
+                flush:'post'
             })
            })
           

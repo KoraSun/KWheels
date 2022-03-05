@@ -1,7 +1,7 @@
 <template>
     <button class="k-button"
       :class="classes"
-      :disabled="loading? true : disabled" 
+      :disabled="disabled" 
     >
     <span v-if="loading" class="k-loadingIndicator"></span>
         <slot />
@@ -80,9 +80,7 @@ $radius:4px;
              animation: none;
          }
     }  
-    & + & {
-       
-    }
+    
     
     &:focus{
         color:$blue;

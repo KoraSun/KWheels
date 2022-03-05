@@ -4,12 +4,11 @@
     </div>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script lang="ts">
+import { defineComponent } from 'vue'
+defineComponent
+export default {
+  name: 'KwheelsTab'
+}
+
 </script>
-
-<style lang="scss" scoped>
-
-</style>
