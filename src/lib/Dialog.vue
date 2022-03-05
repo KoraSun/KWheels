@@ -4,16 +4,17 @@
             <div class="k-dialog-overlay" @click="OnClickOverlay"></div>
                 <div class="k-dialog-wrapper">
                     <div class="k-dialog">
-                        <header>
+                        <header v-if="TitleVisible">
                             <slot name='title' />
-                            <span @click="close" class="k-dialog-close"></span>
+                            <span @click="close" class="k-dialog-close"></span> 
                         </header>
                         <main>
+                            <slot />
                             <slot name='content'/>
                         </main>
                         <footer>
-                            <Button level='main' @click="ok">Confirm</Button>
-                            <Button @click="cancel">Cancel</Button>
+                            <Button level='main' @click="ok">确定</Button>
+                            <Button v-if="CancelVisible" @click="cancel">取消</Button>
                         </footer>
                     </div>
                 </div>
@@ -29,6 +30,10 @@ export default{
             type:Boolean,
             default:false
         },
+        TitleVisible:{
+            type:Boolean,
+            default:true
+        },
         closeOnClickOverlay:{
             type:Boolean,
             default:true
@@ -38,6 +43,10 @@ export default{
         },
         cancel:{
             type:Function
+        },
+        CancelVisible:{
+            type:Boolean,
+            default:true
         }
     },
     components:{Button},
@@ -51,17 +60,13 @@ export default{
             }
         }   
         const cancel=()=>{
-             if(props.cancel?.()!== false){
-                close()
-            }
-
+            props.cancel?.()
+            close()
         }
         const ok=()=>{
             if(props.ok?.()!== false){
-                close()
+            close()
             }
-            
-
         }
         return {close,OnClickOverlay,cancel,ok}
     }
@@ -114,10 +119,12 @@ $border-color:#d9d9d9;
     }
 
     &-close{
-        position: relative;
+        position: absolute;
         display: inline-block;
         width: 16px;
         height: 16px;
+        right:10px;
+        top: 10px;
         cursor:pointer;
         &::before,
         &::after{

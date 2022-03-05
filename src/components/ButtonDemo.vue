@@ -1,50 +1,67 @@
 <template>
     <div>
-      Button组件
-      <h2>示例一</h2>
-      <div>
-           <Button theme="button">默认主题 </Button>
-          <Button theme="link">链接按钮</Button>
-          <Button theme="text">文本按钮</Button>
-      </div>
-      <h1>示例二</h1>
-      <div>
-           <Button size="big"> 大大大</Button>
-          <Button size="normal">正正正</Button>
-          <Button size="small">小小小</Button>
-      </div>
-      <h1>示例三</h1>
-      <div>
-           <Button level="primary" theme="level">基础按钮</Button>
-          <Button level="danger" theme="level">危险按钮</Button>
-          <Button level="warning" theme="level">警告按钮</Button>
-      </div>
-       <h1>示例四</h1>
-       <Button disabled>禁用按钮</Button>
-       <Button :disabled="true">禁用2</Button>
-       <h1>示例五</h1>
-       <Button :loading="true">loading</Button>
-       <Button>加载完毕</Button>
-     
+      <Demo :component="ButtonTheme" />
+      <Demo :component="ButtonSize" />
+      <Demo :component="ButtonLevel"/>
+      <Demo :component="ButtonDisabled"/>
+      <Demo :component="ButtonLoading"/>
     </div>
 </template>
 
 <script lang ="ts">
-import Button from '../lib/Button.vue';
+import Button from '../lib/Button.vue'
+import Demo from './Demo.vue'
+import ButtonTheme from './Buttons/ButtonTheme.vue'
+import ButtonSize from './Buttons/ButtonSize.vue'
+import ButtonLevel from './Buttons/ButtonLevel.vue'
+import ButtonDisabled from './Buttons/ButtonDisabled.vue'
+import ButtonLoading from './Buttons/ButtonLoading.vue'
     export default {
-        components:{Button},
+        components:{Demo,Button},
         setup(){
-            const onClick=()=>{
-                console.log('hi')
-
+            return{
+                ButtonTheme,
+                ButtonSize,
+                ButtonLevel,
+                ButtonDisabled,
+                ButtonLoading
             }
-            return {onClick}
 
-        }
-        
-    }
+        },
+    }  
 </script>
 
 <style lang="scss" scoped>
+$border-color:#d9d9d9;
+.demo{
+    border:1px solid $border-color;
+    margin: 16px 0 32px;
+    >h2{
+        font-size: 20px;
+        padding: 8px 16px;
+        border-bottom: 1px solid $border-color;
+
+    }
+    &-component{
+        padding: 16px;
+
+    }
+    &-actions{
+        padding: 8px 16px;
+        border-top: 1px dashed $border-color;
+
+    }
+    &-code{
+        padding: 8px 16px;
+        border-top: 1px dashed $border-color;
+
+        >pre{
+            line-height: 1.1;
+            font-family: Consolas,'Courier New', Courier, monospace;
+            margin:0;
+        }
+    }
+}
+
 
 </style>

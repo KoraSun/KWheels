@@ -63,7 +63,7 @@ $radius:4px;
     height: $h;
     padding: 0 12px;
     cursor: pointer;
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
