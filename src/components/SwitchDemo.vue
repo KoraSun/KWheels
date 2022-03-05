@@ -1,16 +1,16 @@
 <template>
     <div>
         <h1>Switch组件示例</h1>
-        <Demo :component="Switch1Demo"/>
-        <Demo :component="Switch2Demo"/>   
+        <Demo :component="SwitchNormal"/>
+        <Demo :component="SwitchDisabled"/>   
     </div>
 </template>
 
 <script lang="ts">
 import Button from '../lib/Button.vue'
 import {ref} from 'vue'
-import Switch1Demo from './Switch1.demo.vue'
-import Switch2Demo from './Switch2.demo.vue'
+import SwitchNormal from './Switches/SwitchNormal.vue'
+import SwitchDisabled from './Switches/SwitchDisabled.vue'
 import 'prismjs'
 import 'prismjs/themes/prism.css'
 import Demo from './Demo.vue'
@@ -22,7 +22,7 @@ const Prism =( window as any).Prism
         },
         setup(){
            const bool= ref(false)
-           return {bool,Switch1Demo,Switch2Demo,Prism,}
+           return {bool,SwitchNormal,SwitchDisabled,Prism,}
         }
      
     }

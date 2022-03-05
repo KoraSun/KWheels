@@ -3,9 +3,10 @@
         <div class="k-tabs-nav" ref="container">
             <div class="k-tabs-nav-item" 
                  @click="select(t)"
-                 :class="{selected:t===selected}"
-                 v-for="(t,index) in titles" :key="index"
+                 :class="[t===selected?'selected':'']+[disabled===''?'disabled':'']"
+                 v-for="(t,index) in titles" 
                  :ref="el=>{if(t===selected) selectedItem=el }"
+                 :key="index"
                  >{{t}}
             </div>
             <div class="k-tabs-nav-indicator" ref="indicator"></div>
@@ -23,7 +24,11 @@ import Tab from './Tab.vue'
         props:{
             selected:{
                 type:String
-            }     
+            },
+            disabled:{
+                type:String,
+                default:''
+            }  
         },
         setup(props,context){
            const selectedItem =ref<HTMLDivElement>(null)
@@ -48,18 +53,27 @@ import Tab from './Tab.vue'
                    throw new Error('Tabs子标签必须是Tab')
                }
            })
-           const current=computed(()=>{
-               return defaults.find((tag)=>tag.props.title===props.selected)
-
-           })
+           
            
            const titles =defaults.map((tag)=>{
                return tag.props.title
            })
+           
            const select=(title:string)=>{
                context.emit('update:selected',title)
            }
-           return {defaults,titles,select,current,selectedItem,indicator,container}
+           const current=computed(()=>{
+               return defaults.find((tag)=>tag.props.title===props.selected)
+
+           })
+           return {
+               defaults,
+               titles,
+               select,
+               current,
+               selectedItem,
+               indicator,
+               container}
         }
         
     }
