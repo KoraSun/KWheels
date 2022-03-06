@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2>Switch组件示例</h2>
+
         <Demo :component="SwitchNormal"/>
         <Demo :component="SwitchDisabled"/>   
     </div>

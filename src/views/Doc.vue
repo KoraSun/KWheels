@@ -12,8 +12,7 @@
                     </svg>
                 </router-link>
                 <ul class="menu">
-                    <li>菜单1</li>
-                    <li>菜单2</li>
+                     <a href="https://github.com/KoraSun/Kwheels">Github</a>
                 </ul>    
             </div>
         </div>
@@ -73,6 +72,7 @@ import { inject ,Ref} from 'vue'
 
 <style lang="scss" scoped>
 $color:#0661a8;
+$blue:rgb(119, 183, 243);
  .layout{
      display: flex;
      flex-direction: column;
@@ -170,6 +170,12 @@ $color:#0661a8;
           display: flex;
           white-space: nowrap;
           flex-wrap: nowrap;
+          background:$blue;
+          color:white;
+          border-radius: 20px;
+          padding: 0 12px;
+          height: 32px;;
+          line-height: 32px;
           > li{
               margin:0 1em;
           }

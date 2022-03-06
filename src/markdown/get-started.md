@@ -3,13 +3,15 @@
 请先[安装](#/doc/install)
 
 然后在你的代码中输入下面的代码
+使用组件的时候需要注意样式文件也要单独引入
 
 ```
-import {Button,Tabs,Switch,Dialog} from "Kwheels"
+import {Button,Tabs,Tab,Switch,Dialog，} from "kowheels"
+import "kowheels/dist/lib/kowheels.css"
 ```
 就可以使用我提供的组件了。
 
-## Vue 单文件引入
+## 完整组件列表和引入方式
 
 代码示例：
 ```
@@ -19,9 +21,9 @@ import {Button,Tabs,Switch,Dialog} from "Kwheels"
   </div>
 </template>
 <script>
-import {Button} from "Kwheels"
+import {Button,Switch,Dialog,Tabs,Tab} from "kowheels"
 export default {
-  components: {Button}
+  components: {Button,Switch,Dialog,Tabs,Tab}
 }
 </script>
 

@@ -7,6 +7,7 @@
         <Dialog v-model:visible="showDialog"
                 :TitleVisible="false"
                 :CancelVisible="false"
+                :ok="ok"
         >
         <p>需要您需确认以下信息</p>
         <p>......</p>
@@ -25,10 +26,11 @@ export default {
      components:{Dialog,Button },
         setup(){
             const showDialog = ref(false)
+            const ok=()=>{return true}
             const toggle=()=>{
                 showDialog.value =! showDialog.value
             }
-            return {showDialog,toggle}
+            return {showDialog,toggle,ok}
         }         
 }
 </script>
