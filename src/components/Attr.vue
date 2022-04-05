@@ -3,12 +3,12 @@
         <h2>Attributes</h2>
         <table class="attr-table">
             <thead>
-                <tr class="actions">
+                <tr class="title">
                     <th v-for="column in columns" :key="column.title">{{column.title}}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in data" :key="item">
+                <tr v-for="item in data" :key="item" class="content">
                     <td v-for="value in item" :key="value.params"
                      class="ko-attr-title td"
                     > {{value}}</td>
@@ -34,7 +34,7 @@
 
 <style lang="scss" scoped>
 .ko-attr {
-    border:1px solid #d9d9d9;
+   
     margin: 68px 0 32px;
     max-width: 85%;
     border-radius: 5px;
@@ -51,9 +51,15 @@
     font-size: 14px;
     margin-bottom: 45px;
     line-height: 2em;
-    .actions{
+    .title{
         padding: 8px 16px;
         border-bottom: 1px solid #d9d9d9;
+       
+    }
+
+    .content{
+        border-bottom: 1px solid #dbe6fa;
+         
     }
     .ko-attr-title {
         text-align: center;
