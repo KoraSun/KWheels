@@ -5,8 +5,7 @@
        :class="{'k-checked':value}"
        :disabled="disabled"
     >
-    <span>
-       
+    <span>   
     </span>
     </button>
 </template>
@@ -42,6 +41,7 @@ $h2:18px;
     position: relative;
     cursor: pointer;
     &[disabled]{
+            cursor: not-allowed;
             pointer-events: not-allowed;
         }
     > span{

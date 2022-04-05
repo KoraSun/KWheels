@@ -36,7 +36,8 @@ export default {
         })
         const codeVisible = ref(false)
         const showCode=()=>{
-            codeVisible.value= true}
+            codeVisible.value= true
+        }
         const hideCode=()=>{
             codeVisible.value=false
         }
@@ -57,7 +58,8 @@ $border-color:#d9d9d9;
     >h2{
         font-size: 20px;
         padding: 8px 20px;
-        border-bottom: $border-color;
+        border-bottom:1px solid $border-color;
+    
 
     }
     &-component{
@@ -79,6 +81,7 @@ $border-color:#d9d9d9;
             margin:0;
         }
     }
+    
 }
 
 </style>

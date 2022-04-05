@@ -120,7 +120,6 @@ $color:#0661a8;
     }
 
     .topnav{
-    
       color:$color;
       display: flex;
       padding: 16px;
@@ -146,6 +145,9 @@ $color:#0661a8;
           > li{
               margin:0 1em;
               margin-top: 10px;
+              &:hover{
+                 text-decoration: none;
+              }
           }
       }
     }

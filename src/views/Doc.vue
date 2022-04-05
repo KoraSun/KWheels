@@ -73,6 +73,7 @@ import { inject ,Ref} from 'vue'
 <style lang="scss" scoped>
 $color:#0661a8;
 $blue:rgb(119, 183, 243);
+
  .layout{
      display: flex;
      flex-direction: column;

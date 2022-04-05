@@ -15,5 +15,32 @@
     font-weight: normal;
   }
   
+  .first-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  .second-title {
+    h2 {
+      position: relative;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      &::before {
+        content: "#";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -0.7em;
+        color: #0661a6;
+        font-weight: 700;
+      }
+    }
+    p {
+      font-size: 0.9em;
+      span {
+        font-weight: 700;
+        color: #76b7f1;
+      }
+    }
+  }
   
   
